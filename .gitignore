@@ -1,0 +1,9 @@
+# ignore module files
+
+node_modules/
+**/lib/**
+
+
+# ignore key files
+
+api/core/key.php
