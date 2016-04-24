@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>テスト</title>
+<script src="./assets/js/lib/vue.min.js"></script>
+<script src="./assets/js/lib/vue-resource.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<section id="test">
+    <h1>{{message}}</h1>
+</section>
+
+<script>
+
+window.onload = function() {
+    
+    $json = $.getJSON('http://c.amotarao.space/test/');
+    console.log($json.responseJSON);
+    
+    $.getJSON('http://c.amotarao.space/test/', function(json) {
+        //console.log( json.data.message );
+    });
+    
+    console.log($.getJSON('http://c.amotarao.space/test/'));
+    
+    var test = new Vue({
+        el: '#test',
+        data: {
+            message: 'aaa',
+        }
+    });
+    
+};
+
+</script>
+
+</body>
+</html>
