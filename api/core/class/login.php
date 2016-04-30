@@ -19,7 +19,7 @@ class Login
         $password = $_POST['password'];
         $password = htmlspecialchars($password);
         
-        $Model = new Model();
+        $Model = new UserModel();
         $loginCheck = $Model->tryLogin($mail, $password);
         
         if (!$loginCheck) {
@@ -57,7 +57,7 @@ class Login
         if (isset($_SESSION['C-Factory']['sid'])) {
             $sid = $_SESSION['C-Factory']['sid'];
             
-            $Model = new Model();
+            $Model = new UserModel();
             $tryLogout = $Model->deleteSession($sid);
         }
         
